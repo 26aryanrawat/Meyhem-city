@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +8,74 @@
 
 <style>
 * {
-  .game-grid {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+    url('poster-main.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLITCH TEXT */
+.glitch {
+  font-size: 4rem;
+  color: red;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px red; }
+  25% { text-shadow: -2px -2px white; }
+  50% { text-shadow: 2px -2px red; }
+  75% { text-shadow: -2px 2px white; }
+  100% { text-shadow: 2px 2px red; }
+}
+
+.tagline {
+  margin-top: 10px;
+  letter-spacing: 3px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: red;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: darkred;
+  transform: scale(1.1);
+}
+
+/* SECTION */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* GAME GRID */
+.game-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
@@ -33,94 +101,12 @@
   width: 100%;
   padding: 15px;
   background: rgba(0,0,0,0.7);
-  color: white;
-  font-weight: bold;
   text-align: center;
+  font-weight: bold;
 }
 
 .game-card:hover img {
   transform: scale(1.1);
-
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background: black;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* HERO */
-  .hero {
-  height: 100vh;
-  background: 
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url('poster-main.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* GLITCH TEXT */
-.glitch {
-  font-size: 4rem;
-  color: red;
-  position: relative;
-  animation: glitch 1s infinite;
-}
-
-@keyframes glitch {
-  0% { text-shadow: 2px 2px red; }
-  25% { text-shadow: -2px -2px white; }
-  50% { text-shadow: 2px -2px red; }
-  75% { text-shadow: -2px 2px white; }
-  100% { text-shadow: 2px 2px red; }
-}
-
-.tagline {
-  margin-top: 10px;
-  letter-spacing: 3px;
-  font-size: 1.2rem;
-}
-
-.btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: red;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: darkred;
-  transform: scale(1.1);
-}
-
-/* SECTION */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.rounds {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  border: 1px solid red;
-  padding: 20px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  background: rgba(255,0,0,0.1);
 }
 
 /* FORM */
@@ -138,9 +124,12 @@ footer {
   background: #111;
 }
 </style>
+
 </head>
 
 <body>
+
+<!-- HERO -->
 
 <div class="hero">
   <h1 class="glitch">MAYHEM CITY</h1>
@@ -149,50 +138,56 @@ footer {
   <button class="btn" onclick="scrollToForm()">ENTER IF YOU DARE</button>
 </div>
 
+<!-- ABOUT -->
+
 <section>
   <h2>THE SHOW</h2>
   <p>The most brutal indoor survival game. Only the strongest survive.</p>
 </section>
 
+<!-- ROUNDS -->
+
 <section>
   <h2>ROUNDS</h2>
-  <div class="rounds">
-<div class="game-grid">
 
-  <div class="game-card">
-    <img src="round1.jpg">
-    <span>ROYAL RUMBLE</span>
-  </div>
+  <div class="game-grid">
 
-  <div class="game-card">
-    <img src="round2.jpg">
-    <span>CHAOS TRAP</span>
-  </div>
-
-  <div class="game-card">
-    <img src="round3.jpg">
-    <span>BLIND CHAOS</span>
-  </div>
-
-  <div class="game-card">
-    <img src="round4.jpg">
-    <span>BRAIN HUNT</span>
-  </div>
-
-  <div class="game-card">
-    <img src="round5.jpg">
-    <span>TEAM BREAKER</span>
-  </div>
-
-  <div class="game-card">
-    <img src="final.jpg">
-    <span>FINAL: LAST ONE STANDING</span>
-  </div>
-
+```
+<div class="game-card">
+  <img src="round1.jpg">
+  <span>ROYAL RUMBLE</span>
 </div>
+
+<div class="game-card">
+  <img src="round2.jpg">
+  <span>CHAOS TRAP</span>
+</div>
+
+<div class="game-card">
+  <img src="round3.jpg">
+  <span>BLIND CHAOS</span>
+</div>
+
+<div class="game-card">
+  <img src="round4.jpg">
+  <span>BRAIN HUNT</span>
+</div>
+
+<div class="game-card">
+  <img src="round5.jpg">
+  <span>TEAM BREAKER</span>
+</div>
+
+<div class="game-card">
+  <img src="final.jpg">
+  <span>FINAL: LAST ONE STANDING</span>
+</div>
+```
 
   </div>
 </section>
+
+<!-- FORM -->
 
 <section id="form">
   <h2>JOIN THE CHAOS</h2>
@@ -203,8 +198,11 @@ footer {
   <textarea placeholder="Why should you be selected?"></textarea>
   <textarea placeholder="What dare would you give someone?"></textarea>
 
-  <button class="btn">SUBMIT</button>
+<button class="btn">SUBMIT</button>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer>
   <p>© MAYHEM CITY</p>
